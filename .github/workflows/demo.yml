@@ -21,3 +21,8 @@ jobs:
         uses: google-github-actions/auth@v0.4.0
         with:
           credentials_json: ${{ secrets.gcp_credentials }}
+      - id: gcp-upload-files
+        uses: google-github-actions/upload-cloud-storage@v0.4.0
+        with:
+          path: /public/index.html
+          destination: mr0-site-bucket/index.html
